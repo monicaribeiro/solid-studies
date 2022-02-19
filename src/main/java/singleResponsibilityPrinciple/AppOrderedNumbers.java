@@ -11,39 +11,58 @@ public class AppOrderedNumbers {
     public static void main(String[] args) {
 
         System.out.println("Welcome to the Application!");
-
-        Scanner scanner = new Scanner(System.in);
-
-        List<Integer> nums = new ArrayList<>();
-
         System.out.println("Enter 5 valid integers in the range [0, 10]");
 
-        while(nums.size() < THRESHOLD) {
+        List<Integer> nums = getInputFromUser();
+        sortInput(nums);
+        returnOutput(nums);
+    }
 
-            String s = scanner.nextLine();
+    private static void sortInput(List<Integer> nums) {
+        Collections.sort(nums);
+    }
 
-            try {
-                Integer.parseInt(s);
-            } catch (NumberFormatException nfe) {
+    private static List<Integer> getInputFromUser() {
+        Scanner scanner = new Scanner(System.in);
+        List<Integer> nums = new ArrayList<>();
+
+        while (nums.size() < THRESHOLD) {
+
+            String input = scanner.nextLine();
+
+            if (!isInputANumber(input))
                 System.out.println("Invalid! Try again!");
-                continue;
-            }
 
-            int num = Integer.parseInt(s);
+            int inputNumber = Integer.parseInt(input);
 
-            if(num<0 || num > 10) {
+            if (!isNumberInTheRange(inputNumber))
                 System.out.println("Invalid range! Try again!");
-                continue;
-            }
 
-            nums.add(num);
+            nums.add(inputNumber);
         }
 
         scanner.close();
+        return nums;
+    }
 
-        Collections.sort(nums);
+    private static boolean isInputANumber(String input) {
+        try {
+            Integer.parseInt(input);
+        } catch (NumberFormatException nfe) {
+            return false;
+        }
+        return true;
+    }
 
-        for(int num : nums)
-            System.out.print(num+" ");
+    private static boolean isNumberInTheRange(Integer input) {
+        if (input < 0 || input > 10)
+            return false;
+
+        return true;
+    }
+
+    private static void returnOutput(List<Integer> nums) {
+        for (int num : nums)
+            System.out.print(num + " ");
     }
 }
