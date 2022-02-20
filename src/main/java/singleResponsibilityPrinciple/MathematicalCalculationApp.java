@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class MathematicalCalculationApp {
     public static void main(String[] args) {
+        // Receiving input
         System.out.println("Welcome to the Application!");
 
         Scanner scanner = new Scanner(System.in);
@@ -19,6 +20,7 @@ public class MathematicalCalculationApp {
         int firstInteger = 0;
         int secondInteger = 0;
 
+        // Validations
         if (firstNumber == null) {
             System.out.println("First number is not valid...");
             return;
@@ -43,8 +45,10 @@ public class MathematicalCalculationApp {
             return;
         }
 
+        // Mathematical calculation
         int result = firstInteger + secondInteger;
 
+        // Returning result to user
         System.out.println("The result is: " + result);
         System.out.println("End of the application!");
     }
