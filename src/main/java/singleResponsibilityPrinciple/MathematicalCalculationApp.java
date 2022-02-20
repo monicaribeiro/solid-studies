@@ -1,4 +1,4 @@
 package singleResponsibilityPrinciple;
 
-public class AppMathematicalCalculation {
+public class MathematicalCalculationApp {
 }
