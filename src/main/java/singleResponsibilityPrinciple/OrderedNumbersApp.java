@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
-public class AppOrderedNumbers {
+public class OrderedNumbersApp {
     public static final int THRESHOLD = 5;
 
     public static void main(String[] args) {
