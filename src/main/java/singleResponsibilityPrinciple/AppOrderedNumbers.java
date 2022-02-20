@@ -9,7 +9,6 @@ public class AppOrderedNumbers {
     public static final int THRESHOLD = 5;
 
     public static void main(String[] args) {
-
         System.out.println("Welcome to the Application!");
         System.out.println("Enter 5 valid integers in the range [0, 10]");
 
